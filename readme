@@ -1,0 +1,35 @@
+@author akat
+version 1.0
+python version 3.7
+
+Mailenable bruteforce script for version 9.x . (Have not tested against other major versions)
+Mailenable detects bruteforce attempts if it sees more than 10 failed logins from a single ip within an hour. This feature is disabled by default.
+I am randomizing the timestamp in the client requests anyway. The script cycled through about a 1100 passwords in a second with 5 threads.
+The main bottleneck is building the password queue that is used between the threads. Memory handling and time is as efficient as can be with default packages.
+
+setup: Nothing required. Uses default packages.
+
+Run:
+to run this set the url (line 21), referer (22), username (17) in the script.
+
+usage: brutekat.py [-h] [--set_threads SET_THREADS] [--set_host SET_HOST]
+                   [--randomize RANDOMIZE] [--pass_file PASS_FILE]
+                   [--quite QUITE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --set_threads SET_THREADS, -st SET_THREADS
+                        Number of threads.
+  --set_host SET_HOST, -sh SET_HOST
+                        host ip.
+  --randomize RANDOMIZE, -r RANDOMIZE
+                        randomizes all params.(True/False)
+  --pass_file PASS_FILE, -pf PASS_FILE
+                        password file
+  --quite QUITE, -q QUITE
+                        verbosity(True/False)
+
+
+
+
+
